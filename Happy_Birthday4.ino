@@ -1,8 +1,8 @@
 int speakerPin = 9;
 
-//const int redLED = 2;
-//const int yellowLED = 3;
-//const int greenLED = 4;
+int redLED = 2;
+int yellowLED = 3;
+int greenLED = 4;
 
 int notes_length = 28; // the number of notes
 char notes[] = "GGAGcB GGAGdc GGxecBA yyecdc";
@@ -43,22 +43,34 @@ void playNote(char note, int duration) {
 
 void setup() {
   pinMode(speakerPin, OUTPUT);
-
- // pinMode(redLED, OUTPUT);
-  //pinMode(yellowLED, OUTPUT);
-  //pinMode(greenLED, OUTPUT);
+  
+  pinMode(redLED, OUTPUT);
+  pinMode(yellowLED, OUTPUT);
+  pinMode(greenLED, OUTPUT);
 }
 
 void loop() {
+  //digitalWrite(redLED, HIGH);
+  //digitalWrite(yellowLED, HIGH);
+  //digitalWrite(greenLED, HIGH);
   for (int i = 0; i < notes_length; i++) {
      if (notes[i] == ' ') {
+        digitalWrite(redLED, HIGH);
+        digitalWrite(yellowLED, HIGH);
+        digitalWrite(greenLED, HIGH);
         delay(beats[i] * tempo); // rest
-       
+        
      } 
      else {
         playNote(notes[i], beats[i] * tempo);
-      
+        //digitalWrite(redLED, LOW);
+        //digitalWrite(yellowLED, LOW);
+        //digitalWrite(greenLED, LOW);
      }
      delay(tempo);// pause between notes
   }
+  digitalWrite(redLED, LOW);
+  digitalWrite(yellowLED, LOW);
+  digitalWrite(greenLED, LOW);
+  
 }
