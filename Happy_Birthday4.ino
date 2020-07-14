@@ -3,6 +3,10 @@ int speakerPin = 9;
 int redLED = 2;
 int yellowLED = 3;
 int greenLED = 4;
+int led10 = 10;
+int led11= 11;
+int led12 = 12;
+int led13 = 13;
 
 int notes_length = 28; // the number of notes
 char notes[] = "GGAGcB GGAGdc GGxecBA yyecdc";
@@ -47,6 +51,10 @@ void setup() {
   pinMode(redLED, OUTPUT);
   pinMode(yellowLED, OUTPUT);
   pinMode(greenLED, OUTPUT);
+  pinMode(led10, OUTPUT);
+  pinMode(led11, OUTPUT);
+  pinMode(led12, OUTPUT);
+  pinMode(led13, OUTPUT);
 }
 
 void loop() {
@@ -58,6 +66,10 @@ void loop() {
         digitalWrite(redLED, HIGH);
         digitalWrite(yellowLED, HIGH);
         digitalWrite(greenLED, HIGH);
+        digitalWrite(led10, HIGH);
+        digitalWrite(led11, HIGH);
+        digitalWrite(led12, HIGH);
+        digitalWrite(led13, HIGH);
         delay(beats[i] * tempo); // rest
         
      } 
@@ -69,11 +81,19 @@ void loop() {
         digitalWrite(redLED, HIGH);
         digitalWrite(yellowLED, HIGH);
         digitalWrite(greenLED, HIGH);
+        digitalWrite(led10, HIGH);
+        digitalWrite(led11, HIGH);
+        digitalWrite(led12, HIGH);
+        digitalWrite(led13, HIGH);
      }
     delay(tempo);// pause between notes
     digitalWrite(redLED, LOW);
     digitalWrite(yellowLED, LOW);
     digitalWrite(greenLED, LOW);
+    digitalWrite(led10, LOW);
+    digitalWrite(led11, LOW);
+    digitalWrite(led12, LOW);
+    digitalWrite(led13, LOW);
   }
   //digitalWrite(redLED, LOW);
   //digitalWrite(yellowLED, LOW);
