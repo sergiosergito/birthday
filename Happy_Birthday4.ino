@@ -66,11 +66,17 @@ void loop() {
         //digitalWrite(redLED, LOW);
         //digitalWrite(yellowLED, LOW);
         //digitalWrite(greenLED, LOW);
+        digitalWrite(redLED, HIGH);
+        digitalWrite(yellowLED, HIGH);
+        digitalWrite(greenLED, HIGH);
      }
-     delay(tempo);// pause between notes
+    delay(tempo);// pause between notes
+    digitalWrite(redLED, LOW);
+    digitalWrite(yellowLED, LOW);
+    digitalWrite(greenLED, LOW);
   }
-  digitalWrite(redLED, LOW);
-  digitalWrite(yellowLED, LOW);
-  digitalWrite(greenLED, LOW);
+  //digitalWrite(redLED, LOW);
+  //digitalWrite(yellowLED, LOW);
+  //digitalWrite(greenLED, LOW);
   
 }
